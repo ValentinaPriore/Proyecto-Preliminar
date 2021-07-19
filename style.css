@@ -135,6 +135,10 @@
         justify-items: center;
         text-justify: center;
     }
+    #videoBG{
+        height: 100%; 
+        bottom: 0px;
+    }
 
     .light{
         color: #c7cfb7;
@@ -223,6 +227,10 @@
          border-color: #c7cfb7;
     }
 
+    #presentación-contenedor{
+        padding-left: 30%;
+    }
+
 
 
 .dropdown {
@@ -248,9 +256,6 @@
   ::-webkit-scrollbar-thumb:hover {
     background: grey; 
   }
-
-
-
 
 
   /* Spinner */
@@ -424,17 +429,15 @@
 
 /* Responsive */
 
-    @media screen and (max-width: 600px) {
-        .dropdown {
-        display: absolute;
-        position: sticky;
-        margin: 20px;
-        z-index: 1500;
+    @media screen and (max-width: 1330px) {
+        
+        .nav{
+            background-color: white;
+            display: none; 
+            visibility: hidden;
         }
 
-        .nav{
-            display: none; 
-        }
+     
 
         #cursor{
             display: none;
@@ -445,29 +448,51 @@
             color: white;
         }
 
-        .hero{
-            flex-direction: column;
-            height: 200vh;
+        #hero{
+           top: 0px;
             background-color: #86947b;
+            z-index: 1000;
         }
         .light{
             color: #c7cfb7;
             font-size: 2rem;
             animation-name: cambiarcolor;
             animation-duration: 6s;
-            margin-top : 80px;
+            padding-top : 80px;
         }
         .flex-hero{
             display: block;
             height: 100vh;
+
         }
 
         #map{
-            height: 300px;
+            height: 250px;
+            border-color: #86947b;
+            border-width: 1px;
             
         }
         #graph{
             display: none;
+            height: 0px;
+            visibility: hidden;
+            background-color: #86947b;
+            width: 0px;
+        }
+
+        #videoBG{
+           display: none;
+           height: 0px;
+           visibility: hidden;
+        }
+
+        #goes-up{
+            visibility: hidden;
+            display: none;
+        }
+        #presentación-contenedor{
+            padding-left: 10px;
+    
         }
 
     }
