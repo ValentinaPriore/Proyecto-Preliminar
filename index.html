@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de datos sobre la pandemia covid-19 en medios de América Latina - Valentina Priore
+    </title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css.map">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-grid.rtl.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.rtl.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css.map">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.rtl.css.map">
+    <link rel="stylesheet" href="css/bootstrap-reboot.rtl.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.rtl.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-grid.rtl.css.map">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.rtl.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.rtl.css.map">
+    <link rel="stylesheet" href="css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.css.map">
+    <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.rtl.min.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.rtl.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-utilities.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-utilities.">
+    <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="css/bootstrap.rtl.css.map">
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.bundle.js.map"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js.map"></script>
+    <script src="js/bootstrap.esm.js"></script>
+    <script src="js/bootstrap.esm.js.map"></script>
+    <script src="js/bootstrap.esm.min.js"></script>
+    <script src="js/bootstrap.esm.min.js.map"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
+    <script>
+     window.onload =  function showPage() {
+      document.getElementById("spinner-background").style.display = "none";
+}
+
+const e = document.getElementById('cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+    cursor.classList.add("expand");
+
+    setTimeout(() => {
+        cursor.classList.remove("expand");
+    }, 500)
+})
+    </script>
+</head>
+<body>
+  <div id="cursor"></div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+          
+          Menú
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><button class="dropdown-item" type="button">Presentación</button></li>
+          <li><button class="dropdown-item" type="button">Equipo</button></li>
+          <li><button class="dropdown-item" type="button">Metodología</button></li>
+          <li><button class="dropdown-item" type="button">Índice</button></li>
+          <li><button class="dropdown-item" type="button">Productos</button></li>
+        </ul>
+    </div>
+
+    <div id="spinner-background" class="text-center">
+      <div class='example'>
+        <div class='block'>
+            <div class='item'></div>
+            <div class='item'></div>
+            <div class='item'></div>
+            <div class='item'></div>
+            <div class='item'></div>
+            <div class='item'></div>
+            <div class='item'></div>
+            <div class='item'></div>
+        </div>
+        
+    </div>
+    </div>
+    <button id="goes-up"> 
+      <a href="#hero">
+        <img style="width: 20px; margin: auto;" src="img/arrow.png" alt="">
+      </a>
+     </button>
+
+
+
+  
+ 
+    <div id="hero" class="flex-hero">
+        <div id="graph" class="col" >
+          <video id="videoBG"  style="height: 100%; bottom: 0px;" autoplay muted >
+            <source src="img/WEB.mp4" type="video/mp4">
+        </video>
+        </div>
+        <div id="color" class="col">
+            <h1 class="tittle light">Visualización de datos sobre la pandemia covid-19 en medios de América Latina 
+            </h1>
+            <p class="sub-heading">Anteproyectyo de tesis</p>
+            <p class="sub-heading"> Valentina Priore</p>
+        </div>
+
+    </div>
+    
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="#">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#presentación">Presentación</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#equipo" >Equipo</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link " href="#relevancia" >Relevancia</a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link " href="#metodología" >Metodología</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link " href="#indice" >Índice</a>
+       </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#productos" >Productos</a>
+      </li>
+  </ul>
+    <div class="flex-hero">
+
+        <div class="col">
+          <div style="padding-left: 30%;">
+            <span id="presentación"></span>
+            <h2>Presentación del proyecto</h2>
+            <p >Este proyecto consistirá en el relevamiento y análisis de visualizaciones de datos relacionados a la covid-19 en medios digitales para conocer los patrones comunes y diferentes de diseño y visualización de datos dentro de los medios latinoamericanos y relevar las herramientas más utilizadas en la región.</p>
+            <button class="btn btn-outline-success"> Descargar PDF</button>
+          </div>
+          
+          </div>
+        <div class="col">
+          <img id="map"  src="Img/MAPA.png"  alt="">
+
+        </div>
+
+    </div>
+
+    <div id="text-container">
+        <!-- sOBRE MÍ-->
+        <span id="equipo"></span>
+        <h2>Equipo </h2>
+        <p>Valentina Priore: Estudiante de la generación 2016 de la Licenciatura en Comunicación <i class="fa-solid fa-circle-info"></i>, con perfil en Periodismo. Además, soy desarrolladora web egresada de Jóvenes a Programa 2020 con conocimientos de HTML, CSS, Javascript y diferentes librerías.  </p>
+        <p>Actualmente, me desempeño como periodista para la Agencia Regional de Noticias, ARN, cubriendo América Latina. Trabajé como Diseñadora web y Multimedia en Tata Consultancy Service (TCS) para PwC. Además, tuve la oportunidad de colaborar en el proyecto Veificado.uy durante las elecciones nacionales de 2019. </p>
+       
+        <span id="relevancia"></span>
+        <h2>Relevancia</h2>
+        <div>
+            <div>
+                <p>El año 2020 quedó marcado en la historia por la pandemia de la Covid-19. El primer caso en América Latina se detectó el 26 de febrero en Brasil pero rápidamente se extendió a toda la región. Menos de un mes después, la Organización Mundial de la Salud comenzó a hablar de la enfermedad como una pandemia. </p>
+                <p>Un año pasó y nos encontramos con más de 49 millones de infectados y las muertes superan el millón en la región. Los gobiernos de cada país tomaron diferentes medidas para frenar la enfermedad entre ellas la limitación de la movilidad, la suspensión completa o parcial de las actividades educativas, la promoción del teletrabajo y diferentes medidas para paliar los efectos económicos. </p>
+                <p>En este contexto, el rol del periodista juega un papel esencial para unir a los ciudadanos con los gobiernos y con las fuentes científicas. La variedad de opiniones en un tema tan complejo se suma a la desinformación que circula en redes sociales, que llegó a compartirse por autoridades políticas y figuras de la esfera pública. Todo esto dificulta a los ciudadanos la tarea de discernir la información (Villacrés, 2020). El periodismo tiene un rol clave a la hora de brindar información confiable y dar seguridad a la población ante una crisis sanitaria, al mismo tiempo que informar las gestiones de los gobiernos.</p>
+            </div>
+
+            <div>
+              <br>
+              <p> <strong>PROBLEMA Y PROPUESTA DE INVESTIGACIÓN
+              </strong> </p>
+                <p>En la era de los datos, recopilar, filtrar y visualizar lo que está sucediendo más allá de lo que el ojo puede ver tiene un valor creciente. (Gray, 2021). En la era de los datos, los medios digitales apuntan cada vez más a buscar nuevas visualizaciones y diseños multimedia para atraer y retener a los usuarios en los sitios web. Este crecimiento también permite el surgimiento de herramientas que ayudan al equipo periodístico en la tarea, pero que también requiere de profesionales con capacidades y habilidades nuevas.</p>
+                <p>Durante la pandemia, esta tarea tuvo un protagonismo como no había tenido hasta ahora en los medios, y los periodistas se vieron en la necesidad de usar toda su capacidad inventiva y creatividad para darle sentido y contar lo que estaba viviendo el mundo.(Costa-Sánchez & LópezGarcía, 2020). La crisis de la Covid-19 fue un insumo para la innovación en términos de visualización y una herramienta necesaria en las redacciones de todo el mundo, incluido Latinoamérica.</p>
+                <p>Esta investigación busca ahondar en la producción de visualizaciones en Latinoamérica desde 3 ángulos: la búsqueda y selección de datos, el diseño y el desarrollo. En primera instancia, analizaremos la diversidad de fuentes y datos que se eligieron. La elección del dato, también es la elección de la historia que queremos contar.</p>
+                <p>En cuanto al diseño, el trabajo se enfocará en la selección de la forma en que se visualizó la información: gráficas, infografías, y en la experiencia del usuario y la interactividad. Por último, en el desarrollo se buscará las herramientas o lenguaje de código detrás de cada visualización para entender las capacidades y posibilidades de creación de los equipos latinoamericanos.</p>
+            </div>
+        </div>
+        <img style="width: 350px;" src="img/guante.png" alt="">
+        <hr>
+        <span id="metodología"></span>
+        <h2 >Metodología</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Revisión Bibliográfica
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Análisis de contenido: 
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Análisis de contenido: Se relevarán XX notas de los principales medios de los países de habla hispana que componen Latino América que tengan visualizaciones relacionadas a la temática. </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Entrevistas:
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>dirigidas a periodistas y profesionales que participaron de la creación de algunas de las visualizaciones relevadas en el análisis de contenidos para conocer el proceso. </p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <span id="indice"></span>
+        <h2>Índice</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <ul> <strong>1. Introducción</strong> </ul>
+            </li>
+            <li class="list-group-item">
+                <ul> <strong>2. Metodología</strong> </ul>
+            </li>
+            <li class="list-group-item">
+                <ul> <strong> 3. Capítulo 1: Visualización de datos en los medios</strong> </ul>
+                <ul> 3.1 Formando el equipo: Etapas y actores</ul>
+                <ul> 3.2 El desafío de cubrir una pandemia </ul>
+                <ul> 3.3 Visualización de datos y medios en latinoamérica </ul>
+            </li>
+            <li class="list-group-item">
+                <ul> <strong>4. Capítulo 2: Recolección, selección y análisis de datos </strong> </ul>
+                <ul> 4.1 ¿Cómo lo construimos?</ul>
+                <ul> 4.2 De lectores a usuarios: contenido estático o interactivo</ul>
+                <ul> 4.3 Herramientas más usadas</ul>
+                <ul> 4.4 ¿Qué nos dicen los colores?</ul>
+                <ul> 4.5 Tipos de gráficas, ¿qué historias cuentan?</ul>
+                <ul> 4.6 Mapas e infografías</ul>
+                <ul> 4.7 Mayores diferencias y similitudes  entre países</ul>
+            </li>
+            <li class="list-group-item">
+                <ul> <strong>5. Capítulo 3: Visualización</strong> </ul>
+                <ul> 3.1 Formando el equipo: Etapas y actores</ul>
+                <ul> El desafío de cubrir una pandemia </ul>
+                <ul> Visualización de datos y medios en latinoamérica </ul>
+            </li>
+            <li class="list-group-item">
+                <ul> <strong>6. Conclusiones finales</strong> </ul>
+            </li>
+            <li class="list-group-item">
+                <ul> <strong>7. Bibliografía</strong> </ul>
+            </li>
+        </ul>
+
+        <span id="productos"></span>
+        <h2>Productos</h2>
+    </div>
+
+   <div class="cards-containers">
+        
+     <div   class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img style="height: 70px; margin-bottom: 20px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQzNy4zMzMsNTMuMzMzYzAtMjUuMDY3LDguMDg1LTM1LjczMyw4LjA4NS0zNS43MzNjMi43MzEtMy4xMzYsMy4zMjgtNy41OTUsMS42LTExLjM5MiAgICBDNDQ1LjI5MSwyLjQxMSw0NDEuNDkzLDAsNDM3LjMzMywwaC0zMjBDODcuOTM2LDAsNjQsMjMuOTE1LDY0LDUzLjMzM2MwLDI5LjQxOSwyMy45MzYsNTMuMzMzLDUzLjMzMyw1My4zMzNoMzIwICAgIGM0LjA3NSwwLDcuNzQ0LTIuNDExLDkuNTE1LTYuMTAxYzEuNzkyLTMuNjY5LDEuMjM3LTguMTI4LTEuMjgtMTEuMzI4QzQ0NS40ODMsODkuMTMxLDQzNy4zMzMsNzguNDY0LDQzNy4zMzMsNTMuMzMzeiAgICAgTTQyMC40NTksODUuMzMzSDExNy4zMzNjLTE3LjY0MywwLTMyLTE0LjM1Ny0zMi0zMmMwLTE3LjY0MywxNC4zNTctMzIsMzItMzJoMzAzLjEyNWMtMi40NTMsNy43ODctNC40NTksMTguMzI1LTQuNDU5LDMyICAgIEM0MTYsNjcuMDA4LDQxOC4wMDUsNzcuNTQ3LDQyMC40NTksODUuMzMzeiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNNDE2LDQyLjY2N0gxMTcuMzMzYy01Ljg4OCwwLTEwLjY2Nyw0Ljc3OS0xMC42NjcsMTAuNjY3UzExMS40NDUsNjQsMTE3LjMzMyw2NEg0MTZjNS44ODgsMCwxMC42NjctNC43NzksMTAuNjY3LTEwLjY2NyAgICBTNDIxLjg4OCw0Mi42NjcsNDE2LDQyLjY2N3oiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQzNy4zMzMsODUuMzMzYy01Ljg4OCwwLTEwLjY2Nyw0Ljc3OS0xMC42NjcsMTAuNjY3djM5NC42NjdIMTE3LjMzM2MtMTcuNjQzLDAtMzItMTQuMzU3LTMyLTMyVjUzLjMzMyAgICBjMC01Ljg4OC00Ljc3OS0xMC42NjctMTAuNjY3LTEwLjY2N1M2NCw0Ny40NDUsNjQsNTMuMzMzdjQwNS4zMzNDNjQsNDg4LjA4NSw4Ny45MzYsNTEyLDExNy4zMzMsNTEyaDMyMCAgICBjNS44ODgsMCwxMC42NjctNC43NzksMTAuNjY3LTEwLjY2N1Y5NkM0NDgsOTAuMTEyLDQ0My4yMjEsODUuMzMzLDQzNy4zMzMsODUuMzMzeiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjwvZz48L3N2Zz4=" />
+         <h5 class="card-title">Carpeta de tesis:</h5>
+         <p class="card-text">Consiste en un documento extenso con el proceso y las conclusiones de mi investigación a presentar ante el jurado.</p>
+       </div>
+     </div>
+    
+     <div  class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img style="height: 70px; margin-bottom: 20px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ0MS4yMzksMTM3LjY1NkwzMDYuNTQ3LDIuOTY0QzMwNC42NDksMS4wNjYsMzAyLjA3NiwwLDI5OS4zOTEsMEgxMDkuNTk4Yy0yMy4wNDksMC00MS44LDE4Ljc1MS00MS44LDQxLjh2NDI4LjQgICAgYzAsMjMuMDQ5LDE4Ljc1MSw0MS44LDQxLjgsNDEuOGgyOTIuODA0YzIzLjA0OSwwLDQxLjgtMTguNzUxLDQxLjgtNDEuOFYxNDQuODExICAgIEM0NDQuMjAyLDE0Mi4xMjgsNDQzLjEzNiwxMzkuNTUzLDQ0MS4yMzksMTM3LjY1NnogTTMwOS41MTEsMzQuNTQ5bDEwMC4xNDMsMTAwLjE0MWgtNzguNTgyYy0xMS44ODksMC0yMS41Ni05LjY3Mi0yMS41Ni0yMS41NjIgICAgVjM0LjU0OXogTTQyMy45NjQsNDcwLjJjMCwxMS44ODktOS42NzIsMjEuNTYyLTIxLjU2MiwyMS41NjJIMTA5LjU5OGMtMTEuODg5LDAtMjEuNTYyLTkuNjczLTIxLjU2Mi0yMS41NjJWNDEuOCAgICBjMC0xMS44ODksOS42NzMtMjEuNTYyLDIxLjU2Mi0yMS41NjJoMTc5LjY3NHY5Mi44OTJjMCwyMy4wNDksMTguNzUsNDEuOCw0MS43OTksNDEuOGg5Mi44OTNWNDcwLjJ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0zMzYuOTQ5LDI1Ny4wMTJIMTc1LjA1MWMtNS41ODgsMC0xMC4xMTksNC41MzEtMTAuMTE5LDEwLjExOXM0LjUzMSwxMC4xMTksMTAuMTE5LDEwLjExOWgxNjEuODk4ICAgIGM1LjU5LDAsMTAuMTE5LTQuNTMxLDEwLjExOS0xMC4xMTlTMzQyLjUzOSwyNTcuMDEyLDMzNi45NDksMjU3LjAxMnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTMzNi45NDksMzAyLjIwOEgxNzUuMDUxYy01LjU4OCwwLTEwLjExOSw0LjUzMS0xMC4xMTksMTAuMTE5czQuNTMxLDEwLjExOSwxMC4xMTksMTAuMTE5aDE2MS44OTggICAgYzUuNTksMCwxMC4xMTktNC41MzEsMTAuMTE5LTEwLjExOVMzNDIuNTM5LDMwMi4yMDgsMzM2Ljk0OSwzMDIuMjA4eiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cGF0aCBkPSJNMzM2Ljk0OSwzNDcuNDA0SDE3NS4wNTFjLTUuNTg4LDAtMTAuMTE5LDQuNTMxLTEwLjExOSwxMC4xMTlzNC41MzEsMTAuMTE5LDEwLjExOSwxMC4xMTloMTYxLjg5OCAgICBjNS41OSwwLDEwLjExOS00LjUzMSwxMC4xMTktMTAuMTE5UzM0Mi41MzksMzQ3LjQwNCwzMzYuOTQ5LDM0Ny40MDR6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0yODQuMzMyLDM5Mi42MDFIMTc1LjA1MWMtNS41ODgsMC0xMC4xMTksNC41MzEtMTAuMTE5LDEwLjExOXM0LjUzMSwxMC4xMTksMTAuMTE5LDEwLjExOWgxMDkuMjgxICAgIGM1LjU5LDAsMTAuMTE5LTQuNTMxLDEwLjExOS0xMC4xMTlTMjg5LjkyMiwzOTIuNjAxLDI4NC4zMzIsMzkyLjYwMXoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" />
+             <h5 class="card-title">Publicación académica:</h5>
+            <p class="card-text">Elaboración de un artículo académico versión Revista Latinoamericana de Opinión Pública -WAPOR- y Dixit, basado en la información incluida en la primera parte del proyecto y sus conclusiones. </p>
+        </div>
+     </div>
+    
+     <div  class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img style="height: 80px; margin-bottom: 10px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDc0IDc0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im02Ni40MTcgNjAuMjkyaC01OC44MzRhNS41OSA1LjU5IDAgMCAxIC01LjU4My01LjU4NHYtNGExIDEgMCAwIDEgMS0xaDY4YTEgMSAwIDAgMSAxIDF2NGE1LjU5IDUuNTkgMCAwIDEgLTUuNTgzIDUuNTg0em0tNjIuNDE3LTguNTg0djNhMy41ODcgMy41ODcgMCAwIDAgMy41ODMgMy41ODRoNTguODM0YTMuNTg3IDMuNTg3IDAgMCAwIDMuNTgzLTMuNTg0di0zeiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTQyLjMyMyA1NS43MDhoLTEwLjY0NmEyLjQ3MSAyLjQ3MSAwIDAgMSAtMi40NjktMi40Njh2LTIuNTMyYTEgMSAwIDAgMSAxLTFoMTMuNTg0YTEgMSAwIDAgMSAxIDF2Mi41MzJhMi40NzEgMi40NzEgMCAwIDEgLTIuNDY5IDIuNDY4em0tMTEuMTE1LTR2MS41MzJhLjQ2OS40NjkgMCAwIDAgLjQ2OS40NjhoMTAuNjQ2YS40NjkuNDY5IDAgMCAwIC40NjktLjQ2OHYtMS41MzJ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtNjUuNDY0IDUxLjcwOGgtNTYuOTI4YTEgMSAwIDAgMSAtMS0xdi0zMi44OTNhNC4xMTIgNC4xMTIgMCAwIDEgNC4xMDctNC4xMDdoNTAuNzE0YTQuMTEyIDQuMTEyIDAgMCAxIDQuMTA3IDQuMTA3djMyLjg5M2ExIDEgMCAwIDEgLTEgMXptLTU1LjkyOC0yaDU0LjkyOHYtMzEuODkzYTIuMTEgMi4xMSAwIDAgMCAtMi4xMDctMi4xMDdoLTUwLjcxNGEyLjExIDIuMTEgMCAwIDAgLTIuMTA3IDIuMTA3eiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiI+PC9wYXRoPjwvZz48L3N2Zz4=" />
+         <h5 class="card-title">Sitio web/repositorio: </h5>
+         <p class="card-text">Una web o repositorio que recoja las herramientas, los recursos visuales y las fuentes que sirvan de caja de herramientas de visualización de datos relacionadas a la temática. </p>
+        </div>
+     </div>
+      
+    </div>
+    <div style="height: 100px;"></div>
+    <FOOter>
+
+    </FOOter>
+</body>
+</html>
