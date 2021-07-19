@@ -79,20 +79,7 @@ document.addEventListener('click', () => {
     </script>
 </head>
 <body>
-  <div id="cursor"></div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-          
-          Menú
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li><button class="dropdown-item" type="button">Presentación</button></li>
-          <li><button class="dropdown-item" type="button">Equipo</button></li>
-          <li><button class="dropdown-item" type="button">Metodología</button></li>
-          <li><button class="dropdown-item" type="button">Índice</button></li>
-          <li><button class="dropdown-item" type="button">Productos</button></li>
-        </ul>
-    </div>
+  
 
     <div id="spinner-background" class="text-center">
       <div class='example'>
@@ -115,13 +102,9 @@ document.addEventListener('click', () => {
       </a>
      </button>
 
-
-
-  
- 
     <div id="hero" class="flex-hero">
         <div id="graph" class="col" >
-          <video id="videoBG"  style="height: 100%; bottom: 0px;" autoplay muted >
+          <video id="videoBG" autoplay muted >
             <source src="img/WEB.mp4" type="video/mp4">
         </video>
         </div>
@@ -160,7 +143,7 @@ document.addEventListener('click', () => {
     <div class="flex-hero">
 
         <div class="col">
-          <div style="padding-left: 30%;">
+          <div id="presentación-contenedor" >
             <span id="presentación"></span>
             <h2>Presentación del proyecto</h2>
             <p >Este proyecto consistirá en el relevamiento y análisis de visualizaciones de datos relacionados a la covid-19 en medios digitales para conocer los patrones comunes y diferentes de diseño y visualización de datos dentro de los medios latinoamericanos y relevar las herramientas más utilizadas en la región.</p>
@@ -318,5 +301,7 @@ document.addEventListener('click', () => {
     <FOOter>
 
     </FOOter>
+    <div id="cursor"></div>
+
 </body>
 </html>
