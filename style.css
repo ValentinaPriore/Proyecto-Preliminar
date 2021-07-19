@@ -426,10 +426,10 @@
 
     @media screen and (max-width: 600px) {
         .dropdown {
-        display: block;
-        position: fixed;
+        display: absolute;
+        position: sticky;
         margin: 20px;
-        z-index: 500;
+        z-index: 1500;
         }
 
         .nav{
@@ -452,21 +452,24 @@
         }
         .light{
             color: #c7cfb7;
-            font-size: 3.5rem;
+            font-size: 2rem;
             animation-name: cambiarcolor;
             animation-duration: 6s;
+            margin-top : 80px;
         }
         .flex-hero{
-            display: flex-;
-            flex-direction: column;
-            height: 200vh;
+            display: block;
+            height: 100vh;
         }
 
         #map{
-            height: 100px;
-            margin-left: 10%;
-            margin-top: 10%;
+            height: 300px;
+            
         }
+        #graph{
+            display: none;
+        }
+
     }
 
 
